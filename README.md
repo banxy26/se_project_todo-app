@@ -1,17 +1,25 @@
-# Simple Todo App
+# Project Title: The Simple Todo App
 
-Give a brief description of the project here. Feel free to give it a different name.
+## Description
 
-## Functionality
+The Simple Todo App is an easy-to-use responsive list generator. Guaranteed to keep you on track so you can stay on top of what matters most.
 
-Give a more detailed explanation of the project and its functionality.
+## Tech Stack
 
-## Technology
-
-Give a description of the technologies and techniques used. Pictures, GIFs, or screenshots that detail the project features are recommended.
+- HTML
+- CSS
+- JavaScript
+- Responsive design
 
 ## Deployment
 
-This project is deployed on GitHub Pages:
+This project is deployed to GitHub Pages:
 
 - ADD LINK HERE
+
+## Images of project
+
+![Desktop View](./images/Desktop%201.png)
+![Desktop View](./images/Desktop%202.png)
+![Desktop View](./images/Desktop%203.png)
+![Desktop View](./images/Phnoe%20view.png)
