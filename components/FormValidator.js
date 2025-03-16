@@ -33,30 +33,24 @@ class FormValidator {
     }
   }
   _toggleButtonState() {
-    const buttonElement = this._formEl.querySelector(
-      this._submitButtonSelector
-    );
-    const inputList = Array.from(
-      this._formEl.querySelectorAll(this._inputSelector)
-    );
-
-    if (inputList.some((inputElement) => !inputElement.validity.valid)) {
-      buttonElement.classList.add(this._inactiveButtonClass);
-      buttonElement.disabled = true;
+    if (this._inputList.some((inputElement) => !inputElement.validity.valid)) {
+      this._buttonElement.classList.add(this._inactiveButtonClass);
+      this._buttonElement.disabled = true;
     } else {
-      buttonElement.classList.remove(this._inactiveButtonClass);
-      buttonElement.disabled = false;
+      this._buttonElement.classList.remove(this._inactiveButtonClass);
+      this._buttonElement.disabled = false;
     }
   }
 
   _setEventListeners() {
-    this._toggleButtonState();
     this._inputList = Array.from(
       this._formEl.querySelectorAll(this._inputSelector)
     );
     this._buttonElement = this._formEl.querySelector(
       this._submitButtonSelector
     );
+
+    this._toggleButtonState();
 
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
