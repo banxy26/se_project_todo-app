@@ -19,34 +19,31 @@ function handleCheck(completed) {
 }
 
 function handleDelete(completed) {
+  todoCounter.updateTotal(false);
   if (completed) {
     todoCounter.updateCompleted(false);
-    todoCounter.updateTotal(false);
   }
 }
 
 const addToDoPopup = new PopupWithForm({
   popupSelector: "#add-todo-popup",
-  handleFormSubmit: (evt) => {
-    addTodoForm.addEventListener("submit", (evt) => {
-      evt.preventDefault();
-      const name = evt.target.name.value;
-      const dataInput = evt.target.date.value;
+  handleFormSubmit: (inputValues) => {
+    const name = inputValues.name;
+    const dataInput = inputValues.date;
 
-      const date = new Date(dataInput);
-      date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+    const date = new Date(dataInput);
+    date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
 
-      const id = uuidv4();
+    const id = uuidv4();
 
-      const values = { name, date, id };
-      const todo = generateTodo(values);
-      todosList.append(todo);
-      todoCounter.updateTotal(true);
+    const values = { name, date, id };
+    const todo = generateTodo(values);
+    section.addItem(todo);
+    todoCounter.updateTotal(true);
 
-      newTodoValidator.resetValidation();
+    newTodoValidator.resetValidation();
 
-      addToDoPopup.close();
-    });
+    addToDoPopup.close();
   },
 });
 addToDoPopup.setEventListeners();
