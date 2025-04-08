@@ -19,7 +19,6 @@ This project is deployed to GitHub Pages:
 
 ## Images of project
 
-![Desktop View](./images/Desktop%201.png)
-![Desktop View](./images/Desktop%202.png)
-![Desktop View](./images/Desktop%203.png)
-![Desktop View](./images/Phone%20view.png)
+![Desktop View](./images/desktop.png)
+![Mobile View](./images/mobile.png)
+![Modal ](./images/modal.png)
